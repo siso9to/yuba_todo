@@ -1,19 +1,16 @@
 language: ruby
-
 rvm:
   - 2.5.0
-
-bundler_args: --without development --deployment
-
+bundler_args: "--without development --deployment"
 cache: bundler
-
 before_script:
   - cp config/database.travis.yml config/database.yml
   - bundle exec rake db:create
   - bundle exec rake db:migrate
-
 script:
   - bundle exec rspec spec
-
 services:
   - mysql
+notifications:
+  slack:
+    secure: NjhgosC0cWyLLsJF/OgzeJB7xxamnii32rB5eyfCOJNxo8TZAcIP/4VVtwTwo5sKL3obQRMeqf2cCQx+PkOppr5sVT9dB2S4C+Fm2UybFuqQ9+Ksf/oxiSQfFxmyEdIdTD1bfpMwt1K4nC+ArGd5Jkgh0Dh/ylj2w8aOvUlpFgkLOSj42hG4zvUKqePRDjDeKFWF647gwSgY2FXVLiT7zI0WtZcRYKG9Ig4c0Ih41cRDLGDBMWqcmvlcM1P5kFGix40vTFSAz7HsZbm1bOMHwJD0Ao918u1rUVytOQqMm+BDhnExJNf7CBm0ZyW7Rr8RanG8ll/pzgZHyptER+Pt4O3P3fSwrYAdNDeJXAivefi6bTOFlc09nMVUpz98zF9xFublJd7Tm+p5ls8kX7MZ8G0Kv35ONx+EyNnx5xiY73MqqUo0Vn3oL9+bzj51MicC/KdLwh7afl+OEWMqxUMLtUhq5C/B2vsej6AY/3/tiB1kTyXC/Pd7LWUDbFERlFwWirVQFu+wKp0jSSnr+nguwvSTLxhsfLXPhpDWYffThvousW7vNPs8ArjIJTy5w/4gjI3uCTP2q2mrxqzxCv7r8WskGbwHkXaZR+aWppbZrbbel51GcXcwbOzCwiomfotB/pL5hnL+VpeM33EcG9Z3s12xc+BLLRxYzk+HjzYsgGw=
