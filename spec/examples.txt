@@ -1,5 +1,5 @@
 example_id                           | status | run_time        |
 ------------------------------------ | ------ | --------------- |
-./spec/models/todo_spec.rb[1:1]      | passed | 0.01533 seconds |
-./spec/models/todo_spec.rb[1:2]      | passed | 0.50846 seconds |
-./spec/requests/todos_spec.rb[1:1:1] | passed | 0.33974 seconds |
+./spec/models/todo_spec.rb[1:1]      | passed | 0.00112 seconds |
+./spec/models/todo_spec.rb[1:2]      | passed | 0.53054 seconds |
+./spec/requests/todos_spec.rb[1:1:1] | passed | 0.28998 seconds |
